@@ -1,8 +1,5 @@
 import java.util.Scanner;
 
-import javax.print.attribute.standard.Media;
-import javax.sound.midi.Soundbank;
-
 public class Main{
 
     public static void main(String[] args){
