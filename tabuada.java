@@ -10,7 +10,7 @@ public class tabuada{
         System.out.println("Digite o numero:");
         num = scn.nextInt();
 
-        for(i=0; i<=9; i++){
+        for(i=1; i<=10; i++){
             conta = conta + 1;
             resultado = num * conta;
 
