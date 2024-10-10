@@ -1,0 +1,24 @@
+//ta incompleto//
+
+import java.util.Scanner;
+
+public class Fibonacci{
+
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int num1=1,num2=0,num3=0;
+
+        for(int cont = 1;cont < 8;cont ++){
+          
+        System.out.println(num1);
+        num2 = num1 + num1;
+        System.out.println(num2);
+        num3 = num2 + num1;
+        System.out.println(num3);
+        num1 = num3 + num2;
+
+
+        scn.close();
+    }
+}
+}
