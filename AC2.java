@@ -11,7 +11,7 @@ public class AC2{
         double[] peso = new double[4];
         double[] nota = new double[4];
 
-        System.out.println("Calculo de notas\n");
+        System.out.println("CALCULO DE NOTAS\n");
         System.out.println("Calculo de notas das avaliacoes:");
         System.out.println("Avaliacao Continuada 1 (AC1)");
         System.out.println("Avaliacao Continuada 2 (AC2)");
@@ -21,7 +21,7 @@ public class AC2{
         System.out.println("Escolha a opcao no menu a seguir:\n");
 
         do{
-            System.out.println("Gostaria de alterar o peso da avaliacao ou calcular a media do aluno?\n");
+            System.out.println("\nGostaria de alterar o peso da avaliacao ou calcular a media do aluno?\n");
             System.out.println("(1) Mudar o peso da media das avaliacoes.");
             System.out.println("(2) Calcular a media do aluno.");
             System.out.println("(3) Encerrar programa!");
@@ -36,7 +36,7 @@ public class AC2{
                     System.out.println("(2) Peso da media da AC2");
                     System.out.println("(3) Peso da media da AG");
                     System.out.println("(4) Peso da media da AF");
-                    System.out.println("(5) Para continuar");
+                    System.out.println("(5) Para verificar valores (use antes de continuar para as notas)");
                     System.out.println("(6) Ou outro valor para voltar\n");
                     opcaoPeso = scn.nextInt();
 
@@ -63,14 +63,28 @@ public class AC2{
                                     pesoTotal += peso[i];
                                 }
                                 if(pesoTotal != 1){
-                                    System.out.println("O valor total das notas esta em: "+pesoTotal);
-                                    System.out.println("As notas precisam estar no valor completo (valor 1)");
-                                    System.out.println("Por favor, refaca as notas");
+                                    System.out.println("Os pesos de avaliacao estao com os seguintes valores:");
+                                    System.out.println("AC1: "+peso[0]);
+                                    System.out.println("AC2: "+peso[1]);
+                                    System.out.println("AG: "+peso[2]);
+                                    System.out.println("AF: "+peso[3]);
+                                    System.out.println("O valor total dos valores esta em: "+pesoTotal);
+                                    System.out.println("Os valores precisam estar no valor completo (valor 1)");
+                                    System.out.println("Por favor, refaca os valores");
                                     System.out.println("Pressione qualquer valor para voltar");
-                                    scn.nextLine();
+                                    scn.next();
                                     escolhaMenu = 1;
                                 }
                                 else if(pesoTotal == 1){
+                                    System.out.println("Os pesos de avaliacao estao com os seguintes valores:");
+                                    System.out.println("AC1: "+peso[0]);
+                                    System.out.println("AC2: "+peso[1]);
+                                    System.out.println("AG: "+peso[2]);
+                                    System.out.println("AF: "+peso[3]);
+                                    System.out.println("O valor total esta completo (Total de 1)");
+                                    System.out.println("As notas agora podem ser calculadas.");
+                                    System.out.println("Pressione qualquer valor para continuar");
+                                    scn.next();
                                     escolhaMenu = 2;
                                 }
                                 break;      
@@ -79,9 +93,9 @@ public class AC2{
                                 escolhaMenu = 0;
                                 break;
                     }
-                }while(opcaoPeso <= 5);
+                }while(opcaoPeso <= 5 && pesoTotal != 1);
             }
-            else if(escolhaMenu == 2){
+            else if(escolhaMenu == 2 && pesoTotal == 1){
 
                 do{
                     System.out.println("\nCALCULAR A MEDIA DO ALUNO");
@@ -137,7 +151,6 @@ public class AC2{
                                 break;
 
                         default: System.out.println("Voltando...");
-                                scn.nextLine();
                                 escolhaMenu = 0;
                                 break;
 
@@ -146,8 +159,9 @@ public class AC2{
                 }while(opcaoNota <=5);
             }
             else{
-                System.out.println("Opcao invalida. Pressione qualquer teclar para voltar ao menu inicial");
-                scn.nextLine();
+                System.out.println("Opcao invalida ou valor das medias incorreto. Por favor, verifique o peso da media antes de proseguir para as notas.");
+                System.out.println("Pressione qualquer valor para voltar");
+                scn.next();
             }
 
         }while(escolhaMenu != 3);
