@@ -16,7 +16,7 @@ public class AC2 {
         System.out.println("Gabriel Antunes Barros; RA 240519.");
         System.out.println("Henrique Bertola Bonifacio; RA 240144");
         System.out.println("Philipe Georges Zorub Batzli; RA 240376\n");
-        System.out.println("Pressione qualquer valor para continuar");
+        System.out.println("Pressione qualquer valor e enter para continuar");
         scn.next();
 
         System.out.println("CALCULO DE NOTAS\n");
@@ -85,7 +85,7 @@ public class AC2 {
                                 System.out.println("O valor total dos valores esta em: " + pesoTotal);
                                 System.out.println("Os valores precisam ser maiores que 0");
                                 System.out.println("Por favor, refaca os valores");
-                                System.out.println("Pressione qualquer valor para voltar");
+                                System.out.println("Pressione qualquer valor e enter para voltar");
                                 scn.next();
                                 escolhaMenu = 1;
                             } else if (pesoTotal > 0) {
@@ -96,7 +96,7 @@ public class AC2 {
                                 System.out.println("AF: " + peso[3]);
                                 System.out.println("O valor total esta em: " + pesoTotal);
                                 System.out.println("As notas agora podem ser calculadas.");
-                                System.out.println("Pressione qualquer valor para continuar");
+                                System.out.println("Pressione qualquer valor e enter para continuar");
                                 scn.next();
                                 escolhaMenu = 2;
                             }
@@ -152,15 +152,25 @@ public class AC2 {
                                 notaTotal = notaTotal + (nota[i] * peso[i]) / pesoTotal;
                             }
 
-                            if (notaTotal >= media) {
+                            if (notaTotal >= media && notaTotal <= 10) {
                                 System.out.println("A nota total do aluno foi:" + notaTotal);
                                 System.out.println("\nParabens ele foi aprovado!!\n");
-                                System.out.println("Pressione qualquer valor para voltar");
+                                System.out.println("Pressione qualquer valor e enter para voltar");
+                                scn.next();
+                            } else if (notaTotal > 10) {
+                                System.out.println("O total das notas passa de 10. Por favor corrija as notas\n");
+                                System.out.println("As notas estao com os seguintes valores:");
+                                System.out.println("AC1: " + nota[0]);
+                                System.out.println("AC2: " + nota[1]);
+                                System.out.println("AG: " + nota[2]);
+                                System.out.println("AF: " + nota[3]);
+                                System.out.println("O valor total esta em: " + notaTotal);
+                                System.out.println("Pressione qualquer valor e enter para continuar");
                                 scn.next();
                             } else {
                                 System.out.println("A nota total do aluno foi:" + notaTotal);
                                 System.out.println("\nInfelizmente ele foi reprovado!\n");
-                                System.out.println("Pressione qualquer valor para voltar");
+                                System.out.println("Pressione qualquer valor e enter para voltar");
                                 scn.next();
                             }
                             break;
@@ -173,9 +183,8 @@ public class AC2 {
                     }
                 } while (opcaoNota > 0 && opcaoNota <= 5);
             } else if (escolhaMenu != 3) {
-                System.out.println(
-                        "Opcao invalida ou valor das medias incorreto. Por favor, verifique o peso da media antes de proseguir para as notas.");
-                System.out.println("Pressione qualquer valor para voltar");
+                System.out.println("Opcao invalida ou valor das medias incorreto. Por favor, verifique o peso da media antes de proseguir para as notas.");
+                System.out.println("Pressione qualquer valor e enter para voltar");
                 scn.next();
             }
 
