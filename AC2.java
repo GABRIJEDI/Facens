@@ -157,8 +157,8 @@ public class AC2 {
                                 System.out.println("\nParabens ele foi aprovado!!\n");
                                 System.out.println("Pressione qualquer valor e enter para voltar");
                                 scn.next();
-                            } else if (notaTotal > 10) {
-                                System.out.println("O total das notas passa de 10. Por favor corrija as notas\n");
+                            } else if (notaTotal < 0 || notaTotal > 10) {
+                                System.out.println("O total das notas passa de 10 ou é negativa. Por favor corrija as notas\n");
                                 System.out.println("As notas estao com os seguintes valores:");
                                 System.out.println("AC1: " + nota[0]);
                                 System.out.println("AC2: " + nota[1]);
